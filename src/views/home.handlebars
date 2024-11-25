@@ -1,0 +1,11 @@
+<h1>Productos Disponibles</h1>
+<ul>
+  {{#each products}}
+    <li>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <p>Precio: ${{price}}</p>
+      <p>Stock: {{stock}}</p>
+    </li>
+  {{/each}}
+</ul>

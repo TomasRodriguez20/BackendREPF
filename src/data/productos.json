@@ -1,0 +1,232 @@
+[
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249a",
+    "title": "Short Deportivo",
+    "description": "Shorts livianos",
+    "price": 1000,
+    "category": "ropa",
+    "stock": 35,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249e",
+    "title": "Cinturón de Cuero",
+    "description": "Cinturón ajustable",
+    "price": 1200,
+    "category": "accesorios",
+    "stock": 45,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a1",
+    "title": "Lentes de Sol",
+    "description": "Protección UV",
+    "price": 1800,
+    "category": "accesorios",
+    "stock": 30,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae392499",
+    "title": "Pantalón Jeans",
+    "description": "Jeans ajustados",
+    "price": 2500,
+    "category": "ropa",
+    "stock": 40,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a7",
+    "title": "Guantes de Invierno",
+    "description": "Guantes térmicos",
+    "price": 600,
+    "category": "accesorios",
+    "stock": 50,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249f",
+    "title": "Mochila Urbana",
+    "description": "Mochila de lona",
+    "price": 3500,
+    "category": "accesorios",
+    "stock": 20,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a6",
+    "title": "Pantalón Cargo",
+    "description": "Pantalón con bolsillos",
+    "price": 2800,
+    "category": "ropa",
+    "stock": 35,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a2",
+    "title": "Remera Estampada",
+    "description": "Remera con diseño único",
+    "price": 1400,
+    "category": "ropa",
+    "stock": 40,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249b",
+    "title": "Zapatillas Running",
+    "description": "Zapatillas deportivas",
+    "price": 5000,
+    "category": "calzado",
+    "stock": 25,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae392495",
+    "title": "Remera Básica",
+    "description": "Remera de algodón",
+    "price": 1200,
+    "category": "ropa",
+    "stock": 50,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae392496",
+    "title": "Musculosa Deportiva",
+    "description": "Musculosa de poliéster",
+    "price": 800,
+    "category": "ropa",
+    "stock": 30,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a5",
+    "title": "Medias Deportivas",
+    "description": "Pack de 3 pares",
+    "price": 500,
+    "category": "ropa",
+    "stock": 70,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249c",
+    "title": "Botas de Montaña",
+    "description": "Botas resistentes",
+    "price": 6000,
+    "category": "calzado",
+    "stock": 15,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae392497",
+    "title": "Remera Oversize",
+    "description": "Remera de gran tamaño",
+    "price": 1500,
+    "category": "ropa",
+    "stock": 20,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a0",
+    "title": "Bufanda de Lana",
+    "description": "Bufanda abrigada",
+    "price": 900,
+    "category": "accesorios",
+    "stock": 50,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a8",
+    "title": "Zapatillas Urbanas",
+    "description": "Estilo casual",
+    "price": 4500,
+    "category": "calzado",
+    "stock": 25,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a4",
+    "title": "Camisa Formal",
+    "description": "Camisa de vestir",
+    "price": 2000,
+    "category": "ropa",
+    "stock": 25,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae39249d",
+    "title": "Gorra Estampada",
+    "description": "Gorra con diseño",
+    "price": 700,
+    "category": "accesorios",
+    "stock": 60,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae392498",
+    "title": "Campera de Invierno",
+    "description": "Campera térmica",
+    "price": 8000,
+    "category": "ropa",
+    "stock": 10,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "6738b3f88832e66cae3924a3",
+    "title": "Chaleco Acolchado",
+    "description": "Chaleco para el frío",
+    "price": 4500,
+    "category": "ropa",
+    "stock": 20,
+    "status": true,
+    "__v": 0
+  },
+  {
+    "thumbnails": [],
+    "_id": "67431fb46f8f5496fdf7ff5f",
+    "title": "Camiseta Básica Algodón",
+    "price": 19.99,
+    "description": "Una camiseta básica de algodón suave, ideal para el uso diario y combinable con cualquier outfit.",
+    "createdAt": "2024-11-24T12:44:36.680Z",
+    "updatedAt": "2024-11-24T12:44:36.680Z",
+    "__v": 0
+  }
+]

@@ -1,0 +1,1 @@
+Buenas, envio la reentrega, ahora si bien testeada y mas completa, si la habia testeado algunas cosas a las apuradas (pensando que habia quedado bien), pero luego con el comentario de la devolucion me sirvio mucho para orientarme y mejorar el proyecto, estoy atento a los comentarios, desde ya muchas gracias. Saludos!

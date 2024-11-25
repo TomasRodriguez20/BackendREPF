@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{product.title}} - Detalles</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>{{product.title}}</h1>
+    <p>{{product.description}}</p>
+    <p>Precio: ${{product.price}}</p>
+    <p>Stock: {{product.stock}}</p>
+    <p>Categoría: {{product.category}}</p>
+    
+    <button class="add-to-cart-btn" data-id="{{product._id}}">Agregar al carrito</button>
+
+    <a href="/">Volver a la lista de productos</a>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.querySelector('.add-to-cart-btn').addEventListener('click', async function() {
+            const productId = this.getAttribute('data-id'); 
+
+            try {
+                const response = await fetch(`/api/carts/add/${productId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error al agregar al carrito');
+                }
+
+                const result = await response.json();
+                alert(result.message || 'Producto agregado al carrito');
+            } catch (error) {
+                alert(error.message || 'Error al agregar al carrito');
+            }
+        });
+    </script>
+</body>
+</html>

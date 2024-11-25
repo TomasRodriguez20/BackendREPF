@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos en Tiempo Real</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Productos en Tiempo Real</h1>
+
+    <form id="filters-form">
+    <label for="category">Categoría:</label>
+    <select id="category" name="category">
+        <option value="">Todas</option>
+    </select>
+
+    <label for="query">Buscar:</label>
+    <input type="text" id="query" name="query">
+
+    <label for="stock">Stock:</label>
+    <select id="stock" name="stock">
+        <option value="">Todos</option>
+        <option value="disponible">Disponible</option>
+        <option value="agotado">Agotado</option>
+    </select>
+
+    <label for="sort">Ordenar por precio:</label>
+    <select id="sort" name="sort">
+        <option value="">Sin ordenar</option>
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+    </select>
+
+    <label for="limit">Productos por página:</label>
+    <select id="limit" name="limit">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10" selected>10</option>
+    </select>
+
+    <button type="submit">Aplicar Filtros</button>
+</form>
+
+<script>
+    const categorySelect = document.getElementById('category');
+
+    const loadCategories = async () => {
+        try {
+            const response = await fetch('/api/products/categories'); 
+            const categories = await response.json();
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category.charAt(0).toUpperCase() + category.slice(1); 
+                categorySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar categorías:', error);
+        }
+    };
+
+    loadCategories();
+</script>
+
+
+    <div id="product-list"></div>
+
+    <div id="pagination">
+        <button id="prev-page" disabled>Anterior</button>
+        <span id="current-page">1</span>
+        <button id="next-page">Siguiente</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const productList = document.getElementById('product-list');
+        const filtersForm = document.getElementById('filters-form');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const currentPageSpan = document.getElementById('current-page');
+
+        let currentPage = 1;
+        let totalPages = 1;
+
+        const fetchProducts = async (params = {}) => {
+            const queryParams = new URLSearchParams({ page: currentPage, limit: 10, ...params });
+            const response = await fetch(`/api/products?${queryParams}`);
+            const data = await response.json();
+
+            renderProducts(data.payload);
+            updatePagination(data);
+        };
+
+        const renderProducts = (products) => {
+            productList.innerHTML = products.map(product => `
+                <div>
+                    <h2>${product.title}</h2>
+                    <p>${product.description}</p>
+                    <p>Precio: $${product.price}</p>
+                    <p>Stock: ${product.stock}</p>
+                    <a href="/products/${product._id}" class="details-btn">Ver detalles</a>
+                    <button onclick="handleAddToCart('${product._id}')">Agregar al carrito</button>
+                </div>
+                <hr>
+            `).join('');
+        };
+
+        const updatePagination = ({ page, totalPages: total }) => {
+            currentPage = page;
+            totalPages = total;
+            currentPageSpan.textContent = page;
+
+            prevPageBtn.disabled = page <= 1;
+            nextPageBtn.disabled = page >= total;
+        };
+
+        filtersForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(filtersForm);
+            const filters = Object.fromEntries(formData.entries());
+            currentPage = 1; 
+            fetchProducts(filters);
+        });
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage -= 1;
+                fetchProducts(Object.fromEntries(new FormData(filtersForm).entries()));
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage += 1;
+                fetchProducts(Object.fromEntries(new FormData(filtersForm).entries()));
+            }
+        });
+
+        fetchProducts();
+
+        const handleAddToCart = async (productId) => {
+            try {
+                const response = await fetch(`/api/carts/add/${productId}`, { method: 'POST' });
+                const result = await response.json();
+                alert(result.message || 'Producto agregado al carrito');
+            } catch (error) {
+                console.error('Error al agregar al carrito:', error);
+            }
+        };
+    </script>
+</body>
+</html>
